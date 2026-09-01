@@ -5,7 +5,7 @@ public:
 
         vector<vector<int>> ans;
 
-        for(auto interval : intervals){
+        for(auto& interval : intervals){
             if(ans.empty() || ans.back()[1] < interval[0]){
                 ans.push_back(interval);
             }

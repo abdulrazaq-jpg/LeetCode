@@ -8,19 +8,18 @@ public:
         if(nums[n-1] > nums[n-2]) return n-1;
 
         int low = 1, high = n-2;
-        int ans;
 
         while(low <= high){
             int mid = (low + high)/2;
 
             if(nums[mid] > nums[mid+1] && nums[mid] > nums[mid-1]){
-                ans = mid;
+                return mid;
             }
 
             if(nums[mid] < nums[mid+1]) low = mid + 1;
             else high = mid-1;
         }
 
-        return ans;
+        return -1;
     }
 };

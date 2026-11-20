@@ -11,24 +11,24 @@ public:
 
         for(int i = 0; i < n; i++)
         {
-            if(nums[i] > 0)
+            if(nums[i] > 0)pos.push_back(nums[i]);
+            else neg.push_back(nums[i]);
+        }
+
+        int j = 0 , k = 0;
+
+        for(int i = 0; i < n; i++)
+        {
+            if(i%2 == 0)
             {
-                pos.push_back(nums[i]);
+                nums[i] = pos[j++];
             }
             else
             {
-                neg.push_back(nums[i]);
+                nums[i] = neg[k++];
             }
         }
 
-        vector<int> v;
-
-        for(int i = 0; i < n/2; i++)
-        {
-            v.push_back(pos[i]);
-            v.push_back(neg[i]);
-        }
-
-        return v;
+        return nums;
     }
 };

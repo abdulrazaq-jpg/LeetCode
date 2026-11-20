@@ -9,24 +9,22 @@ public:
     int majorityElement(vector<int>& nums) {
 
         int n = nums.size();
-        unordered_map<int,int> map;
+        unordered_map<int,int> m;
 
-        for(int i = 0; i < n; i++)
+        for(int i = 0 ; i < n; i++)
         {
-            map[nums[i]]++;
+            m[nums[i]]++;
         }
 
-        for(auto x : map)
+        for(auto x : m)
         {
-            int num = x.first;
-            int freq = x.second;
+            int f = x.first;
+            int s = x.second;
 
-            if(freq > n/2)
-            {
-                return num;
-            }
+            if(s>n/2) return f;
         }
 
         return -1;
+
     }
 };
